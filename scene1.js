@@ -6,7 +6,7 @@ class Scene1 extends Phaser.Scene {
 
     preload() {
         // Path to the image assets.
-        const assetsPath = 'assets/images/cozyPeople/firstChar/';
+        const assetsPath = 'assets/firstChar/';
         const directions = ['Down', 'Right', 'Up', 'Left'];
         directions.forEach(direction => {
             this.load.spritesheet(`char${direction}`, `${assetsPath}${direction}/char${direction}.png`, {
