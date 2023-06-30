@@ -5,8 +5,8 @@ var config = {
     height: 720,
     antialias: false, // Disable antialiasing for sprite graphical issue
     physics: {
-        default: 'arcade',
-        arcade: {
+        default: 'matter',
+        matter: {
             gravity: {y:0},
             debug: true
         }

@@ -24,7 +24,6 @@ class Scene1 extends Phaser.Scene {
         // Add key listeners for WASD keys.
         this.cursors = this.input.keyboard.addKeys('W,A,S,D');
         
-    
         const map = this.make.tilemap({key: "map", tileWidth: 16, tileHeight: 16});
         const tilesetFarmGlobal = map.addTilesetImage("farmGlobal");
         const tilsetCozyTownGlobal = map.addTilesetImage("global");
@@ -32,16 +31,21 @@ class Scene1 extends Phaser.Scene {
         this.Ground = map.createLayer("Ground", tilesetFarmGlobal);
         this.Fences = map.createLayer("Fences", tilsetCozyTownGlobal);
         map.setCollisionByProperty({ collides: true });
+        
         this.player = new Player(this, 30*16, 23*16);
+        this.player.setFixedRotation();
+        this.player.setFriction(0);
+
+        
+        this.Fences.setCollisionByProperty({ collides: true });
+        this.matter.world.convertTilemapLayer(this.Fences);
+        
         const debugGraphics = this.add.graphics().setAlpha(0.75);
         map.renderDebug(debugGraphics, {
             tileColor: null, // Color of non-colliding tiles
             collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
             faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
         });
-        // Use an appropriate property here instead of 0, 6100
-        map.setCollisionByProperty({ collides: true });
-        this.physics.add.collider(this.player, this.Fences);
     }
     
     update() {

@@ -1,6 +1,6 @@
 {
   "name": "collisionpractice",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "matter-js": "^0.19.0",
     "phaser": "^3.60.0"
   }
 }

@@ -1,23 +1,22 @@
-class Player extends Phaser.Physics.Arcade.Sprite {
-    constructor(scene, x, y) {
-      super(scene, x, y, 'charDown');
-  
-      // Add this object to the existing scene
-      scene.add.existing(this);
-      scene.physics.add.existing(this);
-  
-      // Enable physics for this player
-      this.setCollideWorldBounds(true);
-  
-      // Initialize keysPressed
-      this.keysPressed = new Set();
-  
-      // Initialize lastAnimKey
-      this.lastAnimKey = '';
-  
-      // Create the animations
-      this.createAnimations(scene);
-    }
+class Player extends Phaser.Physics.Matter.Sprite {
+  constructor(scene, x, y) {
+    super(scene.matter.world, x, y, 'charDown');
+
+    // Add this object to the existing scene
+    scene.add.existing(this);
+
+    // Enable physics for this player
+    this.setBody(scene.matter.bodies.rectangle(x, y, this.width, this.height));
+
+    // Initialize keysPressed
+    this.keysPressed = new Set();
+
+    // Initialize lastAnimKey
+    this.lastAnimKey = '';
+
+    // Create the animations
+    this.createAnimations(scene);
+  }
   
     createAnimations(scene) {
       // Directions for animations
@@ -32,9 +31,10 @@ class Player extends Phaser.Physics.Arcade.Sprite {
   
       // Create animations for each direction
       anims.forEach(anim => {
+        const frames = scene.anims.generateFrameNames(`char${anim.charAt(0).toUpperCase() + anim.slice(1)}`, { start: 0, end: 7 });
         scene.anims.create({
           key: anim,
-          frames: scene.anims.generateFrameNumbers(`char${anim.charAt(0).toUpperCase() + anim.slice(1)}`, { start: 0, end: 7 }),
+          frames: frames,
           frameRate: 13,
           repeat: -1
         });
@@ -84,25 +84,25 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     }
   
     moveUp() {
-      this.setVelocityY(-200);
+      this.setVelocityY(-5);
       this.lastAnimKey = 'up';
       this.anims.play('up', true);
     }
-  
+    
     moveDown() {
-      this.setVelocityY(200);
+      this.setVelocityY(5);
       this.lastAnimKey = 'down';
       this.anims.play('down', true);
     }
-  
+    
     moveRight() {
-      this.setVelocityX(200);
+      this.setVelocityX(5);
       this.lastAnimKey = 'right';
       this.anims.play('right', true);
     }
-  
+    
     moveLeft() {
-      this.setVelocityX(-200);
+      this.setVelocityX(-5);
       this.lastAnimKey = 'left';
       this.anims.play('left', true);
     }
