@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="16" height="2" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
+ <editorsettings>
+  <export target="../Right/rightWalk.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="char1" tilewidth="16" tileheight="16" tilecount="1568" columns="16">
+  <image source="../../Character v.2/characters/char1.png" trans="ff00ff" width="256" height="1568"/>
+ </tileset>
+ <tileset firstgid="1569" name="hat_witch" tilewidth="16" tileheight="16" tilecount="1568" columns="16">
+  <image source="../../Character v.2/acc/hat_witch.png" trans="ff00ff" width="256" height="1568"/>
+ </tileset>
+ <tileset firstgid="3137" name="witch" tilewidth="16" tileheight="16" tilecount="1568" columns="16">
+  <image source="../../Character v.2/clothes/witch.png" trans="ff00ff" width="256" height="1568"/>
+ </tileset>
+ <layer id="1" name="characterRight" width="16" height="2">
+  <data encoding="csv">
+97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,
+113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128
+</data>
+ </layer>
+ <layer id="2" name="clothesRight" width="16" height="2">
+  <data encoding="csv">
+3585,3586,3587,3588,3589,3590,3591,3592,3593,3594,3595,3596,3597,3598,3599,3600,
+3249,3250,3251,3252,3253,3254,3255,3256,3257,3258,3259,3260,3261,3262,3263,3264
+</data>
+ </layer>
+ <layer id="3" name="hatRight" width="16" height="2">
+  <data encoding="csv">
+1665,1666,1667,1668,1669,1670,1671,1672,1673,1674,1675,1676,1677,1678,1679,1680,
+1681,1682,1683,1684,1685,1686,1687,1688,1689,1690,1691,1692,1693,1694,1695,1696
+</data>
+ </layer>
+</map>
