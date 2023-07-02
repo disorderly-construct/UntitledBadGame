@@ -1,8 +1,8 @@
 var config = {
     type: Phaser.CANVAS,
     parent: 'game-wrapper',
-    width: 1280,
-    height: 720,
+    width: 1280 * 1.5,
+    height: 720 * 1.5,
     antialias: false, // Disable antialiasing for sprite graphical issue
     physics: {
         default: 'matter',
