@@ -84,25 +84,25 @@ class Player extends Phaser.Physics.Matter.Sprite {
     }
   
     moveUp() {
-      this.setVelocityY(-5);
+      this.setVelocityY(-2);
       this.lastAnimKey = 'up';
       this.anims.play('up', true);
     }
     
     moveDown() {
-      this.setVelocityY(5);
+      this.setVelocityY(2);
       this.lastAnimKey = 'down';
       this.anims.play('down', true);
     }
     
     moveRight() {
-      this.setVelocityX(5);
+      this.setVelocityX(2);
       this.lastAnimKey = 'right';
       this.anims.play('right', true);
     }
     
     moveLeft() {
-      this.setVelocityX(-5);
+      this.setVelocityX(-2);
       this.lastAnimKey = 'left';
       this.anims.play('left', true);
     }
