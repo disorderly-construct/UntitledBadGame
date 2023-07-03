@@ -15,6 +15,9 @@ class Scene1 extends Phaser.Scene {
               });
         });
         
+
+        
+        
         this.load.tilemapTiledJSON("map", "./src/mainMap1_1.json");
         this.load.image("bat_all", "src/tiledResources/cozyFarm/full version/enemies/bat/bat_all.png")
         this.load.image("farmGlobal", "./src/tiledResources/cozyFarm/full version/global.png");
@@ -45,7 +48,7 @@ class Scene1 extends Phaser.Scene {
         map.setCollisionByProperty({ collides: true });
         
         this.player = new Player(this, 30*16, 23*16);
-        this.player.setScale(1.4);
+        this.player.setScale(1.1);
         this.player.setFixedRotation();
         this.player.setFriction(0);
         this.Lv3Collides.setCollisionByProperty({ collides: true });

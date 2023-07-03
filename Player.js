@@ -39,6 +39,8 @@ class Player extends Phaser.Physics.Matter.Sprite {
           repeat: -1
         });
       });
+
+      
     }
   
     update(cursors) {
