@@ -12,7 +12,7 @@ class Scene1 extends Phaser.Scene {
             this.load.spritesheet(`char${direction}`, `${assetsPath}${direction}/char${direction}.png`, {
                 frameWidth: 32,
                 frameHeight: 32
-            });
+              });
         });
         
         this.load.tilemapTiledJSON("map", "./src/mainMap1_1.json");
