@@ -45,6 +45,7 @@ class Scene1 extends Phaser.Scene {
         map.setCollisionByProperty({ collides: true });
         
         this.player = new Player(this, 30*16, 23*16);
+        this.player.setScale(1.4);
         this.player.setFixedRotation();
         this.player.setFriction(0);
         this.Lv3Collides.setCollisionByProperty({ collides: true });
