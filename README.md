@@ -1,6 +1,7 @@
 # UntitledBadGame
 
 Game Name is a 2D top-down RPG currently in progress.
+Standard wasd controls. Currently pc only.
 
 ## Description
 
